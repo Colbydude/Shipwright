@@ -2184,6 +2184,12 @@
     <ClCompile Include="soh\Enhancements\debugger\debugSaveEditor.cpp">
       <Filter>Source Files\soh\Enhancements\debugger</Filter>
     </ClCompile>
+    <ClCompile Include="soh\Enhancements\dpad.c">
+      <Filter>Source Files\soh\Enhancements</Filter>
+    </ClCompile>
+    <ClCompile Include="soh\Enhancements\gfx.c">
+      <Filter>Source Files\soh\Enhancements</Filter>
+    </ClCompile>
     <ClCompile Include="soh\util.cpp">
       <Filter>Source Files\soh</Filter>
     </ClCompile>
@@ -3754,6 +3760,12 @@
     </ClInclude>
     <ClInclude Include="soh\Enhancements\debugger\debugSaveEditor.h">
       <Filter>Header Files\soh\Enhancements\debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="soh\Enhancements\gfx.h">
+      <Filter>Header Files\soh\Enhancements</Filter>
+    </ClInclude>
+    <ClInclude Include="soh\Enhancements\dpad.h">
+      <Filter>Header Files\soh\Enhancements</Filter>
     </ClInclude>
     <ClInclude Include="soh\util.h">
       <Filter>Header Files\soh</Filter>

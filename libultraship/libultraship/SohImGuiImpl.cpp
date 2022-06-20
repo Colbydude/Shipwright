@@ -561,7 +561,7 @@ namespace SohImGui {
     }
 
     void EnhancementCombo(const std::string& name, const char* cvarName, const std::vector<std::string>& items, int defaultValue) {
-      
+
         if (ImGui::BeginCombo(name.c_str(), items[static_cast<int>(CVar_GetS32(cvarName, defaultValue))].c_str())) {
             for (int settingIndex = 0; settingIndex < (int) items.size(); settingIndex++) {
                 if (ImGui::Selectable(items[settingIndex].c_str())) {
@@ -690,7 +690,7 @@ namespace SohImGui {
         ImGui::SameLine();
         RandomizeColor(cvarName, &ColorRGBA);
         if (allow_rainbow) {
-            
+
             if (ImGui::GetWindowSize().x > 560) {
                 ImGui::SameLine();
             }
@@ -740,7 +740,7 @@ namespace SohImGui {
         ImGui::DockSpace(dockId, ImVec2(0.0f, 0.0f), ImGuiDockNodeFlags_None);
 
         ImGuiIO& io = ImGui::GetIO();
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad; 
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
         if ((ImGui::IsKeyPressed(TOGGLE_BTN)) || (ImGui::IsKeyDown(TOGGLE_PAD_BTN))) {
             bool menu_bar = CVar_GetS32("gOpenMenuBar", 0);
             CVar_SetS32("gOpenMenuBar", !menu_bar);
@@ -783,10 +783,10 @@ namespace SohImGui {
                 EnhancementCheckbox("Rumble Enabled", "gRumbleEnabled");
 
                 EnhancementSliderFloat("Input Scale: %.1f", "##Input", "gInputScale", 1.0f, 3.0f, "", 1.0f, false);
-                Tooltip("Sets the on screen size of the displayed inputs from Show Inputs");  
+                Tooltip("Sets the on screen size of the displayed inputs from Show Inputs");
 
-		ImGui::Separator();  
-		    
+		ImGui::Separator();
+
                 for (const auto& [i, controllers] : Ship::Window::Controllers)
                 {
                     bool hasPad = std::find_if(controllers.begin(), controllers.end(), [](const auto& c) {
@@ -913,6 +913,8 @@ namespace SohImGui {
                     Tooltip("The default response to Kaepora Gaebora is always that you understood what he said");
                     EnhancementCheckbox("Link's Cow in Both Time Periods", "gCowOfTime");
                     Tooltip("Allows the Lon Lon Ranch obstacle course reward to be shared across time periods");
+                    EnhancementCheckbox("DPad Shortcuts", "gDPadShortcuts");
+                    Tooltip("Allows toggling boots and using the Ocarina from the DPad.");
                     EnhancementCheckbox("Enable visible guard vision", "gGuardVision");
                     EnhancementCheckbox("Enable passage of time on file select", "gTimeFlowFileSelect");
                     ImGui::EndMenu();
